@@ -3,7 +3,7 @@ pub mod run;
 
 #[cfg(test)]
 mod tests {
-    use crate::run::search;
+    use crate::run::{search, search_insensitive};
 
     #[test]
     fn one_result() {
@@ -25,6 +25,6 @@ safe, fast, productive.
 Pick three.
 Trust me.";
 
-        assert_eq!(vec!["Rust:", "Trust me."], search(query, content));
+        assert_eq!(vec!["Rust:", "Trust me."], search_insensitive(query, content));
     }
 }
